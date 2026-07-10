@@ -92,9 +92,9 @@ const SKILLS = [
 ];
 
 const STATS_KEYS = [
-  { value: "3+", key: "yearsExp" },
-  { value: "24", key: "projectsShipped" },
-  { value: "12", key: "happyClients" },
+  { value: "1", key: "yearsExp" },
+  { value: "2", key: "projectsShipped" },
+  { value: " ", key: "happyClients" },
 ];
 
 function useTyping(words: string[], speed = 80, pause = 1800) {
