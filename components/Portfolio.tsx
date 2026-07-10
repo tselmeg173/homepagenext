@@ -119,7 +119,7 @@ function ProjectCard({ project }: { project: { id: string; title: string; tags: 
 }
 
 export default function Portfolio() {
-  const typed = useTyping(["Full-Stack Developer", "UI/UX Designer", "Problem Solver", "Open to Work"]);
+  const typed = useTyping(["Information System Developer", "UI/UX Designer", "Problem Solver", "Open to Work"]);
   const [scrolled, setScrolled] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
