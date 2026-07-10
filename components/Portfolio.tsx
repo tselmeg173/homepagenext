@@ -205,32 +205,34 @@ export default function Portfolio() {
   const [sent, setSent] = useState(false);
 
   // Mouse neon glow effect
-  useEffect(() => {
-    const cursor = document.createElement('div');
-    cursor.id = 'neon-cursor';
-    cursor.style.cssText = `
-      position: fixed;
-      width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      background: radial-gradient(circle, #00FF9430 0%, #00FF9408 40%, transparent 70%);
-      pointer-events: none;
-      z-index: 9999;
-      transform: translate(-50%, -50%);
-      transition: left 0.08s ease, top 0.08s ease;
-    `;
-    document.body.appendChild(cursor);
+// Mouse neon glow effect
+useEffect(() => {
+  const cursor = document.createElement('div');
+  cursor.id = 'neon-cursor';
+  cursor.style.cssText = `
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #00FF9430 0%, #00FF9415 30%, #00FF9405 60%, transparent 70%);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: left 0.06s ease, top 0.06s ease;
+    mix-blend-mode: screen;
+  `;
+  document.body.appendChild(cursor);
 
-    const move = (e: MouseEvent) => {
-      cursor.style.left = e.clientX + 'px';
-      cursor.style.top = e.clientY + 'px';
-    };
-    window.addEventListener('mousemove', move);
-    return () => {
-      window.removeEventListener('mousemove', move);
-      if (document.body.contains(cursor)) document.body.removeChild(cursor);
-    };
-  }, []);
+  const move = (e: MouseEvent) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  };
+  window.addEventListener('mousemove', move);
+  return () => {
+    window.removeEventListener('mousemove', move);
+    if (document.body.contains(cursor)) document.body.removeChild(cursor);
+  };
+}, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
